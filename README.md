@@ -10,9 +10,7 @@ Przepływ danych
     Segmentacja — na podstawie linii siatki wycinane są 64 pola (każde jako obrazek).
     Klasyfikacja — model Keras (models/model_szachowy.keras) przypisuje każdemu polu etykietę: black / white / empty.
     Stabilizacja — z kilku kolejnych predykcji budowany jest stabilny stan (głosowanie większościowe po polach); przy dużym szumie klatka jest odrzucana.
-    Detekcja ruchu — porównanie stabilnego stanu z poprzednim:
-        DELTA: jawna zmiana „źródło → cel” (w tym bicie przez wykrycie zmiany koloru na polu docelowym),
-        LEGAL: gdy DELTA nie wystarcza, dopasowanie do legalnego ruchu minimalizującego odległość Hamminga między oczekiwanym a obserwowanym stanem (z progami dist / margin i dodatkowym potwierdzeniem przy słabych kandydatach).
+    Detekcja ruchu — porównanie stabilnego stanu z poprzednim: DELTA: jawna zmiana „źródło → cel” (w tym bicie przez wykrycie zmiany koloru na polu docelowym),
     Potwierdzenie — ten sam kandydat musi pojawić się wiele razy z rzędu (REQUIRED_CONSECUTIVE + adaptacja przy szumie, niskiej pewności modelu, ruchu sceny).
     Filtrowanie dłoni — wysoki odsetek zmienionych pikseli między klatkami resetuje kandydata (unikamy „ruchów” podczas przesuwania figury).
     Zapis — zatwierdzone ruchy trafiają do move_history.txt; GUI tkinter pokazuje aktualną pozycję; możliwy cof (undo / Ctrl+Z w oknie planszy).
