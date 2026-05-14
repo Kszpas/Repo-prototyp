@@ -1,7 +1,8 @@
 Krótki opis architektury modułu gotowe.py
-Cel
 
-Z kamery na żywo odczytać układ bierek na szachownicy, porównywać kolejne stany i zatwierdzać legalne ruchy na wirtualnej planszy (python-chess), z podglądem GUI.
+
+Z kamery na żywo odczytać układ bierek na szachownicy, porównywać kolejne stany i zatwierdzać ruchy na wirtualnej planszy (python-chess), z podglądem GUI.
+
 Przepływ danych
 
     Kalibracja — użytkownik zaznacza 4 narożniki planszy i 9 linii pionowych oraz 9 poziomych w obrazie po transformacji perspektywy. Ustawienia można zapisać w camera_calibration.json.
